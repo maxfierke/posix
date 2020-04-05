@@ -160,11 +160,14 @@ constants:
   #- _SC_XOPEN_UUCP
   #- _SC_XOPEN_VERSION
 
+  - _SC_NPROCESSORS_ONLN
+
   #- STDERR_FILENO
   #- STDIN_FILENO
   #- STDOUT_FILENO
 
 functions:
+  - chroot
   - access
   #- alarm
   - chdir
@@ -186,11 +189,11 @@ functions:
   #- fchdir
   #- fchown
   #- fchownat
-  #- fdatasync
+  - fdatasync
   #- fexecve
   - "@[ReturnsTwice]\nfork"
   #- fpathconf
-  #- fsync
+  - fsync
   - ftruncate
   - getcwd
   #- getegid
@@ -221,7 +224,7 @@ functions:
   #- pread
   #- pwrite
   - read
-  #- readlink
+  - readlink
   #- readlinkat
   - rmdir
   #- setegid
@@ -243,7 +246,7 @@ functions:
   #- tcsetpgrp
   #- truncate
   #- ttyname
-  #- ttyname_r
+  - ttyname_r
   - unlink
   #- unlinkat
   - write

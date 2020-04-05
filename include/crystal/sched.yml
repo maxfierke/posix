@@ -1,0 +1,5 @@
+includes:
+  - sched
+
+functions:
+  - sched_yield

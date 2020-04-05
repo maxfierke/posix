@@ -1,0 +1,11 @@
+includes:
+  - sys/file
+
+constants:
+  - LOCK_SH
+  - LOCK_EX
+  - LOCK_NB
+  - LOCK_UN
+
+functions:
+  - flock

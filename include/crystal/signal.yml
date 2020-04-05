@@ -7,7 +7,7 @@ requires:
 
 types:
   #- sig_atomic_t
-  #- sigset_t
+  - sigset_t
   #- mcontext_t
   - sighandler_t # android
 
@@ -72,7 +72,7 @@ constants:
 
   #- SIG_BLOCK
   #- SIG_UNBLOCK
-  #- SIG_SETMASK
+  - SIG_SETMASK
   #- SA_NOCLDSTOP
   #- SA_ONSTACK
   #- SA_RESETHAND
@@ -91,15 +91,15 @@ functions:
   #- psiginfo
   #- psignal
   #- pthread_kill
-  #- pthread_sigmask
+  - pthread_sigmask
   #- raise
   #- sigaction
-  #- sigaddset
+  - sigaddset
   #- sigaltstack
-  #- sigdelset
-  #- sigemptyset
-  #- sigfillset
-  #- sigismember
+  - sigdelset
+  - sigemptyset
+  - sigfillset
+  - sigismember
   - signal
   #- sigpause
   #- sigpending

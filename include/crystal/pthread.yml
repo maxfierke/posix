@@ -11,7 +11,7 @@ requires:
   - sys/types
   #- sched
 
-#constants:
+constants:
 #  - PTHREAD_BARRIER_SERIAL_THREAD
 #  - PTHREAD_CANCEL_ASYNCHRONOUS
 #  - PTHREAD_CANCEL_ENABLE
@@ -23,7 +23,7 @@ requires:
 #  - PTHREAD_EXPLICIT_SCHED
 #  - PTHREAD_INHERIT_SCHED
 #  - PTHREAD_MUTEX_DEFAULT
-#  - PTHREAD_MUTEX_ERRORCHECK
+  - PTHREAD_MUTEX_ERRORCHECK
 #  - PTHREAD_MUTEX_NORMAL
 #  - PTHREAD_MUTEX_RECURSIVE
 #  - PTHREAD_MUTEX_ROBUST
@@ -52,14 +52,14 @@ requires:
 
 functions:
   #- pthread_atfork
-  #- pthread_attr_destroy
+  - pthread_attr_destroy
   #- pthread_attr_getdetachstate
   #- pthread_attr_getguardsize
   #- pthread_attr_getinheritsched
   #- pthread_attr_getschedparam
   #- pthread_attr_getschedpolicy
   #- pthread_attr_getscope
-  #- pthread_attr_getstack
+  - pthread_attr_getstack
   #- pthread_attr_getstacksize
   #- pthread_attr_init
   #- pthread_attr_setdetachstate
@@ -84,18 +84,19 @@ functions:
   - pthread_cond_destroy
   - pthread_cond_init
   - pthread_cond_signal
-  #- pthread_cond_timedwait
+  - pthread_cond_timedwait
   - pthread_cond_wait
-  #- pthread_condattr_destroy
+  - pthread_condattr_destroy
   #- pthread_condattr_getclock
   #- pthread_condattr_getpshared
-  #- pthread_condattr_init
-  #- pthread_condattr_setclock
+  - pthread_condattr_init
+  - pthread_condattr_setclock
   #- pthread_condattr_setpshared
   - pthread_create
   - pthread_detach
   - pthread_equal
   #- pthread_exit
+  - pthread_getattr_np
   #- pthread_getconcurrency
   #- pthread_getcpuclockid
   #- pthread_getschedparam
@@ -113,18 +114,18 @@ functions:
   #- pthread_mutex_timedlock
   - pthread_mutex_trylock
   - pthread_mutex_unlock
-  #- pthread_mutexattr_destroy
+  - pthread_mutexattr_destroy
   #- pthread_mutexattr_getprioceiling
   #- pthread_mutexattr_getprotocol
   #- pthread_mutexattr_getpshared
   #- pthread_mutexattr_getrobust
   #- pthread_mutexattr_gettype
-  #- pthread_mutexattr_init
+  - pthread_mutexattr_init
   #- pthread_mutexattr_setprioceiling
   #- pthread_mutexattr_setprotocol
   #- pthread_mutexattr_setpshared
   #- pthread_mutexattr_setrobust
-  #- pthread_mutexattr_settype
+  - pthread_mutexattr_settype
   #- pthread_once
   #- pthread_rwlock_destroy
   #- pthread_rwlock_init

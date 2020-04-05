@@ -1,0 +1,12 @@
+includes:
+  - sys/resource
+
+constants:
+  - RUSAGE_SELF
+  - RUSAGE_CHILDREN
+
+structs:
+  - rusage
+
+functions:
+  - getrusage

@@ -29,7 +29,7 @@ constants:
 functions:
   #- clearerr
   #- ctermid
-  #- dprintf
+  - dprintf
   #- fclose
   #- fdopen
   #- feof
