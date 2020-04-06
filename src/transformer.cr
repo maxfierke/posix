@@ -490,7 +490,7 @@ module POSIX
       # resolves constant value
       value = value.gsub(/\b_[A-Z0-9_]+/) do |m|
         if (node = nodes.find(&.name.==(m))).is_a?(CrystalLib::Define)
-          node.value =~ /^[+-.xo\da-f()]+[ULF]*$/ ? node.value : m
+          node.value =~ /^[+-.xo\da-f()]+[ULF]*$/ ? node.value : crvalue(node.value)
         else
           m
         end
