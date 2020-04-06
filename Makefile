@@ -17,6 +17,8 @@ ARCH ?= $(word 1,$(TARGET))
 SYS ?= $(word 3,$(TARGET))
 ABI ?= $(word 4,$(TARGET))
 
+WASI_SDK_PATH ?= $(HOME)/toolchains/wasi-sdk-8.0
+
 .PHONY: clean test
 
 all: bin/main
@@ -27,6 +29,7 @@ crystal: bin/main
 
 clean:
 	rm -f bin/main
+	rm -rf targets
 
 bin/main: src/*.cr
 	@mkdir -p bin
@@ -44,6 +47,18 @@ arm64:
 	C_INCLUDE_PATH=c_include/linux/arm64:c_include/linux/arm64/linux:c_include/linux/arm64/aarch64-linux-gnu \
 		$(MAIN) --arch=aarch64 --sys=linux --abi=gnu --source=include/crystal
 
+wasm32-wasi: bin/main
+	CC="$(WASI_SDK_PATH)/bin/clang --sysroot=$(WASI_SDK_PATH)/share/wasi-sysroot \"\$${@}\"" \
+		$(MAIN) --arch=wasm32 --sys=unknown --abi=wasi --source=include/crystal
+
+wasm32-emscripten: bin/main
+	CC="emcc -s WASM=1 \"\$${@}\"" LLVM_CONFIG="/usr/local/opt/emscripten/libexec/llvm/bin/llvm-config" \
+		$(MAIN) --arch=wasm32 --sys=unknown --abi=emscripten --source=include/crystal
+
+wasm64-emscripten: bin/main
+	CC="emcc -s WASM=1 \"\$${@}\"" LLVM_CONFIG="/usr/local/opt/emscripten/libexec/llvm/bin/llvm-config" \
+		$(MAIN) --arch=wasm64 --sys=unknown --abi=emscripten --source=include/crystal
+
 test:
 	for target in targets/*; do\
 	  echo $$target;\
@@ -51,4 +66,3 @@ test:
 		$(TEST) $$file;\
 	  done;\
 	done
-
