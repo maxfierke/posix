@@ -34,6 +34,9 @@ functions:
   #- a64l
   #- abort
   #- abs
+  - arc4random
+  - arc4random_buf
+  - arc4random_uniform
   #- atexit
   - atof
   #- atoi

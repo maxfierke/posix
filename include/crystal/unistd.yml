@@ -235,7 +235,7 @@ functions:
   #- setreuid
   #- setsid
   #- setuid
-  #- sleep
+  - sleep
   #- swab
   - symlink
   #- symlinkat
