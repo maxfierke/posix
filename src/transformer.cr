@@ -572,6 +572,13 @@ module POSIX
           str << "typedef unsigned long size_t;\n"
         end
 
+        if @arch.starts_with?("wasm")
+          str << "#define __EMSCRIPTEN__ 1\n"
+          str << "#define __wasi__ 1\n"
+          str << "#define __wasm32__ 1\n"
+          str << "#define _WASI_EMULATED_MMAN 1\n"
+        end
+
         # aarch64-gnu
         #if @arch.starts_with?("aarch64")
         #  str << "typedef unsigned long long size_t;\n"
