@@ -9,6 +9,7 @@ description: |
 
 dependencies:
   crystal_lib:
-    github: manastech/crystal_lib
+    github: maxfierke/crystal_lib
+    branch: mf-temp_for_wasm
 
 license: Apache-2.0

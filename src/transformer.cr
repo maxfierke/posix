@@ -1,5 +1,4 @@
 require "crystal_lib"
-require "crystal_lib/clang"
 require "compiler/crystal/formatter"
 require "./resolver"
 
@@ -378,7 +377,7 @@ module POSIX
       case cname
       when "ssize_t"
         "SSizeT"
-      when "uchar", "char_u", "char_s"
+      when "uchar", "char_u", "char_s", "Char_S"
         "Char"
       when "schar"
         "SChar"
@@ -454,6 +453,8 @@ module POSIX
         "#{inputs} -> #{crtype(ctype.output)}"
       when CrystalLib::ErrorType
         crname(ctype.name)
+      when CrystalLib::VaListType
+        "Void*"
       else
         raise "unsupported type: #{ctype.inspect}"
       end
