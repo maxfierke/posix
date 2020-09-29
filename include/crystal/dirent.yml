@@ -4,6 +4,9 @@ includes:
 requires:
 - sys/types
 
+constants:
+  - DT_DIR
+
 types:
   - DIR = Void
 

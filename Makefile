@@ -17,7 +17,7 @@ ARCH ?= $(word 1,$(TARGET))
 SYS ?= $(word 3,$(TARGET))
 ABI ?= $(word 4,$(TARGET))
 
-WASI_SDK_PATH ?= $(HOME)/toolchains/wasi-sdk-8.0
+WASI_SDK_PATH ?= $(HOME)/toolchains/wasi-sdk-11.0
 
 .PHONY: clean test
 

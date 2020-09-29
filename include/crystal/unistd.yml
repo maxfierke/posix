@@ -221,7 +221,7 @@ functions:
   #- pathconf
   #- pause
   - pipe
-  #- pread
+  - pread
   #- pwrite
   - read
   - readlink
